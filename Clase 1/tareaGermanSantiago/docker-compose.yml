@@ -1,0 +1,19 @@
+version: "1.0"
+services:
+  aplicacion:
+    build: .
+    ports:
+      - "3000:3000"
+    links:
+      - bdatos
+  bdatos:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=santiage
+      - MONGO_INITDB_ROOT_PASSWORD=santiagepass
+    
+      
+
+
